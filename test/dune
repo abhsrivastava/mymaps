@@ -1,3 +1,3 @@
 (test
  (name mymaps_test)
- (libraries ounit2))
+ (libraries mymaps ounit2))
