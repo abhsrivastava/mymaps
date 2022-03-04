@@ -1,5 +1,5 @@
 open OUnit2
-open mymaps
+open Mymaps
 let empty_test = "empty has no bindings" >:: (fun _ -> assert_equal [] (empty))
 let mymap_tests = [empty_test]
 let suite = "maps suite" >::: mymap_tests
