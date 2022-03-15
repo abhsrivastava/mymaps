@@ -22,7 +22,7 @@ let remove k m =
   m.(k) <- None
 
 (** Efficiency: O(c) *)
-let of_list c lst = 
+let from_list c lst = 
   let a = create c in 
   List.iter (fun (k, v) -> insert k v a) lst;
   a
@@ -30,9 +30,9 @@ let of_list c lst =
   (** Efficiency O(c)  *)
 let bindings m = 
   let b = ref [] in 
-  for k = 0 to Array.length a do 
+  for k = 0 to Array.length m - 1 do 
     match m.(k) with
     | None -> ()
-    | Some v -> !b := v :: !b   
+    | Some v -> b := (k, v) :: !b   
   done;
   !b

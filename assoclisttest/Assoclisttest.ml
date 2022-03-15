@@ -8,7 +8,7 @@ let from_list_test =
   let lst = [(3110, "fun")] in
   "create a map using from_list" >:: (fun _ -> assert_equal lst (bindings (from_list lst)))
 
-let mymap_tests = [empty_test; from_list_test]
+let assoclist_tests = [empty_test; from_list_test]
 
-let suite = "maps suite" >::: mymap_tests
-let _ = run_test_tt_main suite
+let assoclist_testsuite = "assoc list test suite" >::: assoclist_tests
+let _ = run_test_tt_main assoclist_testsuite

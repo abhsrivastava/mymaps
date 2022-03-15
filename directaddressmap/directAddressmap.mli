@@ -2,7 +2,7 @@
 type 'v t
 
 (** [create c] creates a map with capacity c. Keys [0] to [c -1] are inbounds. *)
-val create : 'v t
+val create : int -> 'v t
 
 (** [insert k v m] mutates map [m] to bind [k] to [v]. 
     If [k] was already bound in [m], that binding is
@@ -23,7 +23,7 @@ val remove : int -> 'v t -> unit
     as associated list [lst] and with capacity [c].
     Requires: [lst] does not contain any duplicate keys,
     and every key in [lst] is in bounds for capacity [c]. *)
-val from_list : (int * 'v) list -> 'v t
+val from_list : int -> (int * 'v) list -> 'v t
 
 (** [bindings m] takes in a map with bindings of type [k] and [v] 
     and converts it into a list of tuples of the same type. 
