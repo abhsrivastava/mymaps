@@ -17,7 +17,12 @@ let remove_test =
   let map = from_list 1 lst in
   "remove an element from the map" >:: (fun _ -> assert_equal [] (remove 0 map; bindings map))
 
-let directaddressmap_tests = [empty_test; fromlist_test; find_test; remove_test;]
+let insert_test = 
+  let lst = [(0, "foo")] in
+  let map = create 1 in 
+  "insert an binding into the map" >:: (fun _ -> assert_equal lst (insert 0 "foo" map; bindings map))
+
+let directaddressmap_tests = [empty_test; fromlist_test; find_test; remove_test; insert_test]
 
 let directaddressmap_suite = "direct address map test suite" >::: directaddressmap_tests
 let _ = run_test_tt_main directaddressmap_suite
