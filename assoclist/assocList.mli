@@ -16,5 +16,12 @@ val find : 'k -> ('k, 'v) t -> 'v option
     does not exist in [m], then m is unchanged. *)
 val remove : 'k -> ('k, 'v) t -> ('k, 'v) t
 
-(** test method which will be deleted later *)
-val sayHello : string
+(** [from_list list] takes in a list of tuples of type [k] and [v] and returns a map with the same bindings.
+    If the list contains duplicates, then the left most binding is preserved. *)
+val from_list : ('k * 'v) list -> ('k, 'v) t
+
+(** [bindings m] takes in a map with bindings of type [k] and [v] 
+    and converts it into a list of tuples of the same type. 
+    There are no duplicates in the output list *)
+
+val bindings : ('k, 'v) t -> ('k * 'v) list

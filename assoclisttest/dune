@@ -1,0 +1,3 @@
+(test
+ (name assoclisttest)
+ (libraries AssocList ounit2))
