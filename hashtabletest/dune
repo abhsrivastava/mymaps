@@ -1,0 +1,3 @@
+(test
+ (name hashtabletest)
+ (libraries HashTable ounit2))

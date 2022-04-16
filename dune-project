@@ -31,6 +31,14 @@
  (tags
   (topics "to describe" your project)))
 
+(package
+ (name HashTable)
+ (synopsis "A short synopsis")
+ (description "A longer description")
+ (depends ocaml dune)
+ (tags
+  (topics "to describe" your project)))
+
  (package
  (name RBTreeMap)
  (synopsis "A short synopsis")
