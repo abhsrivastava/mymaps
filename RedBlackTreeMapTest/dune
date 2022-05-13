@@ -1,0 +1,3 @@
+(test
+ (name RedBlackTreeMapTest)
+ (libraries RedBlackTreeMap ounit2))
