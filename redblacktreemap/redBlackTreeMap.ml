@@ -26,10 +26,14 @@ let rec insert_aux k v = function
   | Leaf -> Node (Red, Leaf, (k, v), Leaf)
   | Node (c, l, (x, y), r) as n -> 
       if k < x then balance (c, insert_aux k v l, (x, y), r)
-      else if k > v then balance (c, l, (x, y), insert_aux k v r)
+      else if k > x then balance (c, l, (x, y), insert_aux k v r)
       else n
 
 let insert k v m = 
   match insert_aux k v m with 
   | Leaf -> failwith "Not possible"
   | Node (_, l, t, r) -> Node (Black, l, t, r) (* always color the root node black *)
+
+let rec size = function
+  | Leaf -> 0
+  | Node (_, l, _, r) -> 1 + (size l) + (size r)

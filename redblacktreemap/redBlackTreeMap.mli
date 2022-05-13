@@ -17,3 +17,6 @@ val bindings: ('k, 'v) t -> ('k * 'v) list
 (** [insert k v m] binds a new key [k] to a value [v] and returns a new map [m]. 
     If [k] is already bound in the map [m] then the value is overwritten with [v] *)
 val insert: 'k -> 'v -> ('k, 'v) t -> ('k, 'v) t
+
+(** [size m] returns the number of key value pairs in the map *)
+val size: ('k, 'v) t -> int
