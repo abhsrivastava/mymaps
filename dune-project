@@ -40,7 +40,7 @@
   (topics "to describe" your project)))
 
  (package
- (name RBTreeMap)
+ (name RedBlackTreeMap)
  (synopsis "A short synopsis")
  (description "A longer description")
  (depends ocaml dune)
