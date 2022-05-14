@@ -28,6 +28,12 @@ let bindings_test _ =
   let result = bindings map in 
   assert_equal [(1, "foo")] result
 
+let max_test _ = 
+  let t = (insert 10 "f" (insert 20 "b1" (insert 50 "b2" empty))) in
+  match max t with 
+  | None -> assert_failure "max value not returned"
+  | Some v -> assert_equal 50 (fst v)
+
 let redblacktree_tests = [
   "empty set has size 0" >:: size_test;
   "add 1 item to empty map and size should be 1" >:: size_1_test;
@@ -35,6 +41,7 @@ let redblacktree_tests = [
   "find should return None on an empty map" >:: find_test_1;
   "find should return value when used on an inserted value" >:: find_test_2;
   "bindings should return an array of inserted values" >:: bindings_test;
+  "get the maximum key value in a tree" >:: max_test;
 ]
 
 let redblacktree_suite = "Tests for HashMap based on RedBlackTree" >::: redblacktree_tests

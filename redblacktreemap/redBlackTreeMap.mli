@@ -20,3 +20,6 @@ val insert: 'k -> 'v -> ('k, 'v) t -> ('k, 'v) t
 
 (** [size m] returns the number of key value pairs in the map *)
 val size: ('k, 'v) t -> int
+
+(** [max m] returns the maximum key in the map *)
+val max : ('k, 'v) t -> ('k * 'v) option
