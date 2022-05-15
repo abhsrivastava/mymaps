@@ -23,3 +23,7 @@ val size: ('k, 'v) t -> int
 
 (** [max m] returns the maximum key in the map *)
 val max : ('k, 'v) t -> ('k * 'v) option
+
+(** [remove k m] removes the binding of key [k] from the map [m]. 
+    If there is no binding present then the same [m] is returned *)
+val remove: 'k -> ('k, 'v) t -> ('k, 'v) t
